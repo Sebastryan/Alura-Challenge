@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="Encriptador.css" />
+    <link rel="icon" href="./imagenes/robot-icon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <title>Desafio Encriptador</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <img
+        src="./imagenes/robot-icon.png"
+        alt="Un robot sosteniendo una bocina contra su cabeza"
+      />
+      <h2>Juego <span class="light bounce">Encriptador</span> de texo</h2>
+      <div class="cont-mode">
+        <div class="toggle"></div>
+      </div>
+    </header>
+    <div class="container">
+      <main>
+        <form id="form">
+          <textarea name="input" id="input-data" cols="30" rows="10"></textarea>
+          <div class="cont-button">
+            <div>
+              <button type="submit" class="btn-encript">Encriptar</button>
+              <button type="submit" class="btn-desencript">Desencriptar</button>
+            </div>
+            <p><span>!</span> Solo letras minusculas y sin acentos</p>
+          </div>
+        </form>
+      </main>
+      <aside>
+        <h3 class="text-status">Ningun texto se a encontrado</h3>
+        <p class="text-user">
+          Ingresa el texto que quieras encriptar o desencriptar
+        </p>
+        <img src="./imagenes/without-text.png" alt="" class="img-not-found" />
+      </aside>
+    </div>
+    <footer class="footer">
+      <p>
+        Pagina desarrollada por Sebastián Emiliano Palma González, la elección
+        de colores y el boton de modo oscuro son las cosas que mas me demoraron
+        en ser añadidas, habre tardado un dia en sacar la versión 1
+      </p>
+    </footer>
+    <script src="Encriptador.js"></script>
+  </body>
+</html>
