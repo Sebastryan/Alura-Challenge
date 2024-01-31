@@ -1,0 +1,1 @@
+Proyecto Desencriptador, planteado por parte de la escuela digital Alura, la modificación de colores como el uso de otras imagenes y el futuro boton para cambiar a un modo oscuro, fueron implementados por mi.
