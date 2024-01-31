@@ -20,7 +20,7 @@
         src="./imagenes/robot-icon.png"
         alt="Un robot sosteniendo una bocina contra su cabeza"
       />
-      <h2>Juego <span class="light bounce">Encriptador</span> de texo</h2>
+      <h2>Juego <span class="bounce">Encriptador</span> de texo</h2>
       <div class="cont-mode">
         <div class="toggle"></div>
       </div>
@@ -28,13 +28,14 @@
     <div class="container">
       <main>
         <form id="form">
-          <textarea name="input" id="input-data" cols="30" rows="10"></textarea>
+          <textarea name="input" id="input-data" class="input-data"cols="30" rows="10"></textarea>
           <div class="cont-button">
             <div>
               <button type="submit" class="btn-encript">Encriptar</button>
               <button type="submit" class="btn-desencript">Desencriptar</button>
             </div>
-            <p><span>!</span> Solo letras minusculas y sin acentos</p>
+            <p class="p"><span class="sign">!</span> Solo letras minusculas y sin acentos</p>
+            <button type="button" class="btn-paste off">Pegar</button>
           </div>
         </form>
       </main>
@@ -44,6 +45,7 @@
           Ingresa el texto que quieras encriptar o desencriptar
         </p>
         <img src="./imagenes/without-text.png" alt="" class="img-not-found" />
+        <button type="button" class="btn-copy off">Copiar</button>
       </aside>
     </div>
     <footer class="footer">

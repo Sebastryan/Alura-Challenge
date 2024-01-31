@@ -1,5 +1,10 @@
 body {
   background-color: #fdf0c2;
+  transition: all 1s;
+}
+.body-dark{
+  background-color:#010101;
+  color: aliceblue;
 }
 .header-container {
   display: flex;
@@ -7,6 +12,11 @@ body {
   justify-content: space-evenly;
   align-items: center;
   background-color: #a0885d;
+  transition: all 1s;
+}
+.header-dark{
+  background-color: #a03456;
+  color: aliceblue;
 }
 .header-container img {
   height: 100%;
@@ -19,6 +29,7 @@ body {
 .bounce {
   display: inline-block;
   animation: bounce 1.7s infinite;
+  transition: all 1s;
 }
 @keyframes bounce {
   0%,
@@ -38,6 +49,28 @@ body {
     transform: translateY(-30px);
   }
 }
+.bounce-dark {
+  display: inline-block;
+  animation: bounce-dark 1.7s infinite;
+}
+@keyframes bounce-dark {
+  0%,
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(20px);
+    color: #f970ad;
+  }
+  40% {
+    transform: translateY(-20px);
+    color: #4890de;
+  }
+  60% {
+    transform: translateY(-30px);
+  }
+}
 .cont-mode {
   border: 2px solid #2644a0;
   border-radius: 50px;
@@ -46,6 +79,11 @@ body {
   padding: 3px;
   background-color: #dfb912;
   cursor: pointer;
+  transition: all 1s;
+}
+.cont-mode-dark{
+  border: 2px solid #f970ad;
+  background-color: #40bda0;
 }
 .toggle {
   border-radius: 50%;
@@ -56,6 +94,12 @@ body {
   /*left: 55%;*/
   left: 0%;
   transition: 1.3s;
+  transition: 1s;
+}
+.toggle-dark {
+  background-color: #f970ad;
+  left: 55%;
+  transition: 1s;
 }
 .container {
   display: flex;
@@ -71,6 +115,10 @@ main {
   border-radius: 20px;
   overflow: hidden;
   height: 80vh;
+  transition: all 1s;
+}
+.main-dark{
+  background-color: #301020;
 }
 #form {
   display: flex;
@@ -79,7 +127,7 @@ main {
   justify-content: center;
   height: 100%;
 }
-#input-data {
+.input-data {
   font-family: "Share Tech Mono", monospace;
   width: 90%;
   max-width: 90%;
@@ -91,15 +139,24 @@ main {
   border-radius: 20px;
   outline: none;
   font-size: 1.2em;
+  transition: all 1s;
 }
-
-#form p span {
+.input-d-dark{
+  border-color: #a03456;
+  color: #40bda0;
+}
+.sign {
   display: inline-block;
   background-color: black;
   color: white;
   border-radius: 55%;
   width: 1em;
   text-align: center;
+  transition: all 1s;
+}
+.sign-dark{
+  background-color: white;
+  color: black;
 }
 .cont-button {
   height: 16vh;
@@ -108,7 +165,8 @@ main {
   align-items: center;
   justify-content: space-evenly;
 }
-.cont-button div button {
+
+.btn-encript,.btn-desencript{
   width: 200px;
   cursor: pointer;
   border: none;
@@ -118,12 +176,19 @@ main {
   font-weight: 600;
   background-color: #dfb932;
   margin: 0 20px;
-  transition: 0.2s;
+  transition: 0.5s;
 }
-.cont-button button:hover {
+.btn-dark{
+  background-color: #40bda0;
+}
+.btn-encript:hover,.btn-desencript:hover {
   background-color: #2644a0;
   color: #ddc092;
   transform: scale(1.1);
+}
+.btn-dark:hover{
+  background-color: #f970ad;
+  color: #301020;
 }
 .cont-button button:active {
   transform: scale(0.9);
@@ -135,11 +200,18 @@ aside {
   font-family: "Share Tech Mono", monospace;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
   height: 80vh;
   width: 30%;
+  transition: all 1s;
+}
+.aside-dark{
+  background-color: #402030;
+}
+.aside-dark .text-user,.aside-dark .text-status{
+  color: aliceblue;
 }
 aside h3 {
   font-weight: 800;
@@ -153,14 +225,41 @@ aside h3 {
 .img-not-found {
   height: 80%;
 }
-.footer{
-    margin: 30px 0 0 0;
-    height: 10vh;
-    background-color: #746915;
-    display: grid;
-    place-content: center;
-    font-family: "Share Tech Mono", monospace;
-    padding: 10px;
-    font-size: 1.1em;
-    text-align: center;
+.img-found {
+  display: none;
+}
+.off{
+  display: none;
+}
+.on{
+  display: block;
+  background-color: #29627c;
+  color: aliceblue;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.on:hover{
+  transform: scale(1.1);
+}
+.btn-copy-dark{
+  background-color: #301020;
+  color: #ddc092;
+}
+.footer {
+  margin: 30px 0 0 0;
+  height: 10vh;
+  background-color: #746915;
+  color: #a2e1f0;
+  display: grid;
+  place-content: center;
+  font-family: "Share Tech Mono", monospace;
+  padding: 10px;
+  font-size: 1.1em;
+  text-align: center;
+  transition: all 1s;
+}
+.footer-dark{
+  background-color: #a03456;
 }
