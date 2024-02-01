@@ -88,6 +88,7 @@ contMode.addEventListener("click", () => {
   footer.classList.toggle("footer-dark");
   bounce.classList.toggle("bounce-dark");
   btnCopy.classList.toggle("btn-copy-dark");
+  btnPaste.classList.toggle('btn-copy-dark');
 });
 //Función para copiar texto
 function copText() {

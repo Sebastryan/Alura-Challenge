@@ -128,23 +128,13 @@ main {
   height: 100%;
 }
 .input-data {
-  font-family: "Share Tech Mono", monospace;
-  width: 90%;
-  max-width: 90%;
-  height: 30%;
-  max-height: 60%;
-  background: transparent;
   border: 1px solid #999071;
-  padding: 10px;
-  border-radius: 20px;
-  outline: none;
-  font-size: 1.2em;
-  transition: all 1s;
 }
 .input-d-dark{
   border-color: #a03456;
   color: #40bda0;
 }
+
 .sign {
   display: inline-block;
   background-color: black;
@@ -217,10 +207,21 @@ aside h3 {
   font-weight: 800;
   text-decoration: overline underline;
 }
-.text-user {
+.text {
+  font-family: "Share Tech Mono", monospace;
+  width: 75%;
+  max-width: 75%;
+  min-width: 75%;
+  height: 30%;
+  max-height: 60%;
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1.1em;
+  transition: all 1s;
+  margin-top: 10px;
   text-align: center;
-  max-width: 80%;
-  margin: 20px 0 0 0;
 }
 .img-not-found {
   height: 80%;
@@ -246,6 +247,8 @@ aside h3 {
 .btn-copy-dark{
   background-color: #301020;
   color: #ddc092;
+  border: 2px solid #402030;
+  transition: all 1s;
 }
 .footer {
   margin: 30px 0 0 0;
@@ -262,4 +265,106 @@ aside h3 {
 }
 .footer-dark{
   background-color: #a03456;
+}
+@media screen and (max-width: 435px) {
+  .header-container{
+    height: 10vh;
+  }
+  .header-container h2{
+    font-size: 1.1em;
+  }
+  .cont-mode{
+    width: 25px;
+    height: 15px;
+  }
+  .container{
+    margin: 30px 0;
+    height: 90vh;
+    flex-direction: column;
+  }
+  main{
+    width: 80%;
+    margin: 10px auto;
+    height: 100vh;
+  }
+  .cont-button{
+    height: 12vh;
+  }
+  .cont-button div{
+    display: flex;
+  }
+  .btn-encript,.btn-desencript{
+    width: 100px;
+    height: 20px;
+    padding:0;
+  }
+  aside{
+    height: 30%;
+    width: 80%;
+    margin: auto;
+  }
+  .text{
+    font-size: 0.8em;
+  }
+  .on{
+    padding: 5px 20px;
+  }
+  .footer{
+    height: 11vh;
+    font-size: 0.9em;
+  }
+
+}
+@media screen and (max-width: 900px) and (min-width: 430px){
+  .header-container{
+    height: 15vh;
+  }
+  .header-container h2{
+    font-size: 1.2em;
+  }
+  .cont-mode{
+    width: 40px;
+    height: 20px;
+  }
+  .container{
+    margin: 10px auto;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95vw;
+  }
+  main{
+    width: 80%;
+    margin: 0 auto 15px;
+    height: 50%;
+  }
+  
+  .cont-button{
+    height: 16vh;
+  }
+  .cont-button div{
+    display: flex;
+  }
+  .btn-encript,.btn-desencript{
+    width: 100px;
+    height: 20px;
+    padding:0;
+  }
+  aside{
+    width: 80%;
+    height: 30%;
+    margin: auto;
+    padding: 10px 0;
+  }
+  
+  .text{
+    font-size: 0.8em;
+  }
+  .on{
+    padding: 5px 20px;
+  }
+  .footer{
+    height: 11vh;
+    font-size: 1.2em;
+  }
 }
