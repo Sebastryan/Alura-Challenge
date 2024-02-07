@@ -20,7 +20,7 @@ let bounce = document.querySelector(".bounce");
 let btnCopy = document.querySelector(".btn-copy");
 let btnPaste = document.querySelector(".btn-paste");
 
-// Prevenimos el comportamiento por defecto del submit del form y eliminamos la imagen que aparecia en el texto encriptado una vez ingresamos texto
+// Prevenimos el comportamiento por defecto del submit del form y eliminamos la imagen que aparecía en el texto encriptado una vez ingresamos texto
 function preventD(e) {
   e.preventDefault();
   imgAside.classList.add("img-found");
