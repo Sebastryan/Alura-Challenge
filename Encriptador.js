@@ -1,3 +1,4 @@
+// Trayendo los elementos del DOM que planeo usar mas adelante
 let textUser = document.getElementById("input-data");
 let textCodify = document.querySelector(".text-user");
 let statusTxt = document.querySelector(".text-status");
@@ -19,15 +20,16 @@ let bounce = document.querySelector(".bounce");
 let btnCopy = document.querySelector(".btn-copy");
 let btnPaste = document.querySelector(".btn-paste");
 
-// Prevenimos el comportamiento por defecto del submit del form y eliminamos la imagen que marcaba el texto
+// Prevenimos el comportamiento por defecto del submit del form y eliminamos la imagen que aparecia en el texto encriptado una vez ingresamos texto
 function preventD(e) {
   e.preventDefault();
   imgAside.classList.add("img-found");
 }
 formulario.addEventListener("submit", preventD);
 
-//Aqui capturamos el valor,lo recorremos en el bucle y modificamos el valor en función a las reglas del challenge y despues lo actualizamos en
-//el aside, ademas de modificar el texto descriptivo y desaparecemos la imagen
+/*Primero almacenamos el valor del texto que ingresa el usuario en una variable, para encriptarla iteramos la cadena de texto y cuando 
+encontramos el caracter clave (a,e,i,o,u) lo sustituimos por el valor clave.
+Una vez terminado el recorrido de la cadena y esta misma ya alterada, tomamos el texto encriptado y lo mostramos en el aside, al mísmo tiempo removemos las clases que ocultaban los botones de copiar y pegar para que el usuario pueda usarlos*/
 function encriptText() {
   let txt = textUser.value;
   let encTxt = "";
@@ -46,7 +48,7 @@ function encriptText() {
       encTxt += txt[i];
     }
   }
-
+//Aquí se hace la ejecución de la función ademas, se cambia el texto que definia el status del usuario de "Ningun texto se a encontrado" a "Texto procesado"
   textCodify.innerHTML = encTxt;
   statusTxt.innerHTML = "Texto procesado";
   btnCopy.classList.add("on");
@@ -54,7 +56,9 @@ function encriptText() {
   btnPaste.classList.add("on");
   btnPaste.classList.remove("off");
 }
-//usamos el método replace para sustituir los valores del string (estuve 1 dia entero leyendo documentación ayuda) por los valores descodificados
+/*Para descodificar el texto codificado (A pesar de que en un inicio dije que fue un dia entero en realidad solo fueron 7 hrs) volvemos a traer
+el texto que el usuario ingresó y usando el método replace sustituimos los valores codificados que se encuentren por las gadenas de texto que 
+representan*/
 function desEncriptText() {
   let txt = textUser.value;
   let desEncTxt = txt
@@ -63,6 +67,7 @@ function desEncriptText() {
     .replace(/ai/g, "a")
     .replace(/ober/g, "o")
     .replace(/ufat/g, "u");
+// En este caso tambien hago aparecer los botónes de copiar y pegar, ya que puede que el usuario ingrese el texto encriptado desde la primer recarga de la página
   textCodify.innerHTML = desEncTxt;
   statusTxt.innerHTML = "Texto procesado";
   btnCopy.classList.add("on");
@@ -70,10 +75,11 @@ function desEncriptText() {
   btnPaste.classList.add("on");
   btnPaste.classList.remove("off");
 }
+// Con listeners tomo los botones que encriptan y desencriptan y les agrego el evento de escucha para que se ejcuten las funciones
 btnDesencript.addEventListener("click", desEncriptText);
 btnEncript.addEventListener("click", encriptText);
 
-//En esta parte voy a manejar el boton para cmabiar de color
+// Con el método toggle ejecuto el cambio de modo claro a oscuro de manera general en todos los elementos que deban de cambiar su color
 contMode.addEventListener("click", () => {
   body.classList.toggle("body-dark");
   contMode.classList.toggle("cont-mode-dark");
@@ -90,13 +96,13 @@ contMode.addEventListener("click", () => {
   btnCopy.classList.toggle("btn-copy-dark");
   btnPaste.classList.toggle('btn-copy-dark');
 });
-//Función para copiar texto
+// Genero la función que copia el texto almaceno l valor en una variable y la retorno
 function copText() {
   let valText = textCodify.textContent;
   return valText;
 }
 btnCopy.addEventListener("click", copText);
-//Funcion para pegar texto
+// En el texto que ingresa el usuario tomo la ejecusión de la función de copiado y hago que tome el valor y lo incruste en el texto del usuario
 function pastText() {
     textUser.value = copText();
 }
