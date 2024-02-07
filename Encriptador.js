@@ -61,13 +61,23 @@ el texto que el usuario ingresó y usando el método replace sustituimos los val
 representan*/
 function desEncriptText() {
   let txt = textUser.value;
-  let desEncTxt = txt
-    .replace(/enter/g, "e")
-    .replace(/imes/g, "i")
-    .replace(/ai/g, "a")
-    .replace(/ober/g, "o")
-    .replace(/ufat/g, "u");
-// En este caso tambien hago aparecer los botónes de copiar y pegar, ya que puede que el usuario ingrese el texto encriptado desde la primer recarga de la página
+  let desEncTxt = txt.replace(/(enter|imes|ai|ober|ufat)/g, function(match) {
+    switch (match) {
+      case "enter":
+        return "e";
+      case "imes":
+        return "i";
+      case "ai":
+        return "a";
+      case "ober":
+        return "o";
+      case "ufat":
+        return "u";
+      default:
+        return match; // Devolver la coincidencia original si no coincide con ninguna palabra clave
+    }
+  });
+
   textCodify.innerHTML = desEncTxt;
   statusTxt.innerHTML = "Texto procesado";
   btnCopy.classList.add("on");
@@ -75,6 +85,7 @@ function desEncriptText() {
   btnPaste.classList.add("on");
   btnPaste.classList.remove("off");
 }
+
 // Con listeners tomo los botones que encriptan y desencriptan y les agrego el evento de escucha para que se ejcuten las funciones
 btnDesencript.addEventListener("click", desEncriptText);
 btnEncript.addEventListener("click", encriptText);
@@ -99,6 +110,7 @@ contMode.addEventListener("click", () => {
 // Genero la función que copia el texto almaceno l valor en una variable y la retorno
 function copText() {
   let valText = textCodify.textContent;
+  navigator.clipboard.writeText(valText)
   return valText;
 }
 btnCopy.addEventListener("click", copText);
